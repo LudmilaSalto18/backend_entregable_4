@@ -1,7 +1,7 @@
-const { DataTypes } = require('sequelize');
-const sequelize = require('../utils/connection');
+import { DataTypes } from 'sequelize';
+import { define } from '../utils/connection';
 
-const User = sequelize.define('user', {
+const User = define('user', {
     email: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -39,4 +39,4 @@ User.prototype.toJSON = function () {
     delete values.password;
     return values;
 }
-module.exports = User;
+export default User;

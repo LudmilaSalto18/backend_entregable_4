@@ -1,11 +1,11 @@
-const { DataTypes } = require('sequelize');
-const sequelize = require('../utils/connection');
+import { DataTypes } from 'sequelize';
+import { define } from '../utils/connection';
 
-const EmailCode = sequelize.define('emailCode', {
+const EmailCode = define('emailCode', {
     code: {
         type: DataTypes.STRING,
         allowNull: false
     },
 });
 
-module.exports = EmailCode;
+export default EmailCode;
